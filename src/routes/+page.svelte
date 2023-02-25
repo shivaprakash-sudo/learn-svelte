@@ -1,15 +1,23 @@
 <script>
-    let numbers = [1, 2, 3, 4, 5];
+    import Nested from './Nested.svelte';
+    import Info from './Info.svelte';
 
-    function addNumber() {
-        numbers = [...numbers, numbers.length + 1];
-    }
-
-    $: sum = numbers.reduce((a, b) => a + b, 0);
+    const details = {
+        name: "Shiva",
+        link: "https://linkedin.com/in/shiva-pendem"
+    };
 </script>
 
-<p>{numbers.join("+")} = {sum}</p>
+<h3>Props</h3>
+<Nested answer={42}/>
 
-<button on:click={addNumber}>
-    Add a number
-</button>
+<h3>Default Props</h3>
+<Nested />
+
+<h3>Object props</h3>
+
+<Info name={details.name} link={details.link}/>
+
+<h3>Spread props</h3>
+
+<Info {...details}/>
