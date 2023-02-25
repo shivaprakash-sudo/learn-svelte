@@ -1,2 +1,15 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+    let numbers = [1, 2, 3, 4, 5];
+
+    function addNumber() {
+        numbers = [...numbers, numbers.length + 1];
+    }
+
+    $: sum = numbers.reduce((a, b) => a + b, 0);
+</script>
+
+<p>{numbers.join("+")} = {sum}</p>
+
+<button on:click={addNumber}>
+    Add a number
+</button>
