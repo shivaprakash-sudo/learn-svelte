@@ -3,7 +3,8 @@
 	import Info from './Info.svelte';
 	import Logic from './Logic.svelte';
 	import Thing from './Thing.svelte';
-	import { apiKey } from '../../config.js';
+	// import { apiKey } from '../config.js';
+	import DomEvents from './DOMEvents.svelte';
 
 	const details = {
 		name: 'Shiva',
@@ -23,23 +24,23 @@
 		fruits = fruits.slice(1);
 	}
 
-	async function getRandomMoviePoster() {
-		const randomNum = Math.floor(Math.random() * 1000000);
-		console.log(randomNum);
-		const result = await fetch(`https://www.omdbapi.com/?i=tt${randomNum}&apikey=${apiKey}`);
-		const data = await result.json();
-		console.log(data);
-		return data.Poster;
-	}
+	// async function getRandomMoviePoster() {
+	// 	const randomNum = Math.floor(Math.random() * 1000000);
+	// 	console.log(randomNum);
+	// 	const result = await fetch(`https://www.omdbapi.com/?s=Batman&type=movie&apikey=${apiKey}}`);
+	// 	const data = await result.json();
+	// 	console.log(data);
+	// 	return data.Search[randomNum].Poster;
+	// }
 
-	let poster = getRandomMoviePoster();
+	// let poster = getRandomMoviePoster();
 
-	function handlePosterClick() {
-		poster = getRandomMoviePoster();
-	}
+	// function handlePosterClick() {
+	// 	poster = getRandomMoviePoster();
+	// }
 </script>
 
-<h3>Props</h3>
+<!-- <h3>Props</h3>
 <Nested answer={42} />
 
 <h3>Default Props</h3>
@@ -73,9 +74,11 @@
 	{:catch error}
 		<p class="error">Something went wrong! {error.message}</p>
 	{/await}
-</div>
+</div> -->
 
-<style>
+<DomEvents />
+
+<!-- <style>
 	.poster {
 		width: 13rem;
 		max-width: 100%;
@@ -84,4 +87,4 @@
 	.error {
 		color: red;
 	}
-</style>
+</style> -->
