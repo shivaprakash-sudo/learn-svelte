@@ -5,6 +5,7 @@
 	import Thing from './Thing.svelte';
 	// import { apiKey } from '../config.js';
 	import DomEvents from './DOMEvents.svelte';
+	import InnerEvent from './InnerEvent.svelte';
 
 	const details = {
 		name: 'Shiva',
@@ -38,6 +39,10 @@
 	// function handlePosterClick() {
 	// 	poster = getRandomMoviePoster();
 	// }
+
+	function handleEventClick(event) {
+		alert(event.detail.music);
+	}
 </script>
 
 <!-- <h3>Props</h3>
@@ -76,7 +81,9 @@
 	{/await}
 </div> -->
 
-<DomEvents />
+<!-- <DomEvents /> -->
+
+<InnerEvent on:message={handleEventClick} />
 
 <!-- <style>
 	.poster {
