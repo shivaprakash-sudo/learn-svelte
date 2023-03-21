@@ -6,6 +6,7 @@
 	// import { apiKey } from '../config.js';
 	import DomEvents from './DOMEvents.svelte';
 	import InnerEvent from './InnerEvent.svelte';
+	import Outer from './Outer.svelte';
 
 	const details = {
 		name: 'Shiva',
@@ -83,7 +84,7 @@
 
 <!-- <DomEvents /> -->
 
-<InnerEvent on:message={handleEventClick} />
+<Outer on:message={handleEventClick} />
 
 <!-- <style>
 	.poster {
