@@ -8,6 +8,7 @@
 	import InnerEvent from './InnerEvent.svelte';
 	import Outer from './Outer.svelte';
 	import CustomButton from './CustomButton.svelte';
+	import NumericBinding from './NumericBinding.svelte';
 
 	const details = {
 		name: 'Shiva',
@@ -91,9 +92,13 @@
 
 <CustomButton on:click={() => alert('Button clicked bsdk!')} />
 
-<input type="text" bind:value={name} />
+<div>
+	<input type="text" bind:value={name} />
 
-<h1>Hello {name}</h1>
+	<h1>Hello {name}</h1>
+</div>
+
+<NumericBinding />
 
 <style>
 	/* .poster {
