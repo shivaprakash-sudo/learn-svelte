@@ -7,6 +7,7 @@
 	import DomEvents from './DOMEvents.svelte';
 	import InnerEvent from './InnerEvent.svelte';
 	import Outer from './Outer.svelte';
+	import CustomButton from './CustomButton.svelte';
 
 	const details = {
 		name: 'Shiva',
@@ -85,6 +86,8 @@
 <!-- <DomEvents /> -->
 
 <Outer on:message={handleEventClick} />
+
+<CustomButton on:click={() => alert('Button clicked bsdk!')} />
 
 <!-- <style>
 	.poster {
