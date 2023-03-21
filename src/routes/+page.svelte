@@ -23,6 +23,8 @@
 		{ id: 6, name: 'lemon' }
 	];
 
+	let name = 'world!';
+
 	function handleClick() {
 		fruits = fruits.slice(1);
 	}
@@ -89,13 +91,25 @@
 
 <CustomButton on:click={() => alert('Button clicked bsdk!')} />
 
-<!-- <style>
-	.poster {
+<input type="text" bind:value={name} />
+
+<h1>Hello {name}</h1>
+
+<style>
+	/* .poster {
 		width: 13rem;
 		max-width: 100%;
 		border-radius: 0.5rem;
 	}
 	.error {
 		color: red;
+	} */
+
+	* {
+		font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 	}
-</style> -->
+
+	input {
+		font: inherit;
+	}
+</style>
